@@ -13,13 +13,13 @@ class CreateTravelPackagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('travel_package', function (Blueprint $table) {
+        Schema::create('travel_packages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('slug');
             $table->string('location');
             $table->longText('about');
-            $table->string('feature_event');
+            $table->string('featured_event');
             $table->string('language');
             $table->string('foods');
             $table->date('departure_date');
@@ -38,6 +38,6 @@ class CreateTravelPackagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('travel_package');
+        Schema::dropIfExists('travel_packages');
     }
 }
