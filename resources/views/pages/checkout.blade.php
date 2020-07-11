@@ -150,39 +150,13 @@
                       <hr>
                       <h2>Payment Instruction</h2>
                       <p class="payment-instructions">
-                          Please complete your payment before to continue the underful trip
+                        You will be redirected to another page to pay using GO-PAY
                       </p>
-                      <div class="bank">
-                          <div class="bank-item pb-3">
-                              <img src="{{url('frontend/image/ic_bank.png')}} " alt="" class="bank-image">
-                              <div class="description">
-                                  <h3>PT Nomdas ID</h3>
-                                  <p>
-                                      0881 8829 8800
-                                      <br>
-                                      Bank Central Asia
-                                  </p>
-                              </div>
-                              <div class="clearfix"></div>
-                          </div>
-
-                          <div class="bank-item pb-3">
-                              <img src="{{url('frontend/image/ic_bank.png')}} " alt="" class="bank-image">
-                              <div class="description">
-                                  <h3>PT Nomdas ID</h3>
-                                  <p>
-                                      0899 8501 7888
-                                      <br>
-                                      Bank NSBC
-                                  </p>
-                              </div>
-                              <div class="clearfix"></div>
-                          </div>
-                      </div>
+                      <img src="{{url('frontend/image/gopay.png')}} " class="w-50">
                   </div>
 
                   <div class="join-container">
-                    <a href="{{route('checkout-success', $item->id)}} " class="btn btn-block btn-join-now mt-3 py-2">I Have Made Payment</a>
+                    <a href="{{route('checkout-success', $item->id)}} " class="btn btn-block btn-join-now mt-3 py-2">Process Payment</a>
                   </div>
                   <div class="text-center mt-3">
                     <a href="{{route('detail', $item->travel_package->slug)}} " class="text-muted">Cancel Booking</a>

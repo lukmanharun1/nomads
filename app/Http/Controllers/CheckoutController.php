@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use App\Mail\TranscationSuccess;
 use App\Transaction;
 use Illuminate\Http\Request;
 use App\TransactionDetail;
 use App\TravelPackage;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Exception;
+use Midtrans\Config;
+use Midtrans\Snap;
 
 class CheckoutController extends Controller
 {
@@ -81,9 +86,46 @@ class CheckoutController extends Controller
     }
     public function success(Request $request, $id)
     {
-        $transacation = Transaction::findOrFail($id);
-        $transacation->transaction_status = 'PENDING';
-        $transacation->save();
-        return view('pages.success');
+        $transaction = Transaction::with(['details', 'travel_package.galleries', 'user'])->findOrFail($id);
+        $transaction->transaction_status = 'PENDING';
+        $transaction->save();
+
+        // set konfigurasi midtrans
+        Config::$serverKey = "SB-Mid-server-ziWbynE1_MzDzhc9dBv1-BlM";
+        Config::$isProduction = false;
+        Config::$isSanitized = true;
+        Config::$is3ds = true;
+
+        // buat array untuk kirim ke midtrans
+        $midtrans_params = [
+            'transaction_details' => [
+                'order_id' => 'TEST-' . $transaction->id,
+                'gross_amount' => (int) $transaction->transaction_total
+            ],
+            'customer_details' => [
+                'first_name' => $transaction->user->name,
+                'email' => $transaction->user->email
+            ],
+            'enabled_payments' => ['gopay'],
+            'vtweb' => []
+        ];
+
+        try {
+            // ambil halaman payment ke halaman midtrans
+            $paymentUrl = Snap::createTransaction($midtrans_params)->redirect_url;
+
+
+            // redirect ke halaman midtrans
+            return redirect()->away($paymentUrl);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        // return $transaction;
+        // kirim email ke user e-ticket nya
+        // Mail::to($transaction->user)->send(
+        //     new TranscationSuccess($transaction)
+        // );
+        // return view('pages.success');
     }
 }
