@@ -41,6 +41,7 @@ class CheckoutController extends Controller
             'nationality' => 'ID',
             'is_visa' => false,
             'doe_passport' => Carbon::now()->addYears(5)
+
         ]);
 
         return redirect()->route('checkout', $transaction->id);
@@ -95,18 +96,19 @@ class CheckoutController extends Controller
         Config::$isProduction = false;
         Config::$isSanitized = true;
         Config::$is3ds = true;
-
+        // return $transaction;
         // buat array untuk kirim ke midtrans
         $midtrans_params = [
             'transaction_details' => [
-                'order_id' => 'TEST-' . $transaction->id,
+                'order_id' => "TEST-$transaction->id",
                 'gross_amount' => (int) $transaction->transaction_total
             ],
             'customer_details' => [
                 'first_name' => $transaction->user->name,
                 'email' => $transaction->user->email
             ],
-            'enabled_payments' => ['gopay'],
+
+            'enabled_payments' => ['gopay', 'indomaret'],
             'vtweb' => []
         ];
 

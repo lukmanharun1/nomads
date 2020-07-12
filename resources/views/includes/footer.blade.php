@@ -34,7 +34,7 @@
           <div class="col-12 col-lg-3">
             <h5>GET CONNECTED</h5>
             <ul class="list-unstyled">
-              <li><a href="#">Jakarta Selatan</a></li>
+              <li><a href="#">Tangerang Kota</a></li>
               <li><a href="#">Indonesia</a></li>
               <li><a href="#">0821 - 2222 - 8888</a></li>
               <li><a href="#">Support@nomads.id</a></li>
@@ -47,7 +47,7 @@
   <div class="container-fluid">
     <div class="row border-top justify-content-center align-items-center pt-4">
       <div class="col-auto text-gray-500 font-weight-light">
-        2020 Copyright Nomads . All rights reserved . Made in Jakarta
+        2020 Copyright Nomads . All rights reserved . Made in Tangerang Kota
       </div>
     </div>
   </div>

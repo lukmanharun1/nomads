@@ -42,13 +42,17 @@ class MidtransController extends Controller
             }
         } else if ($status == 'settlement') {
             $transaction->transcation_status = 'SUCCESS';
-        } else if ($status == 'pending') {
+        }
+        else if ($status == 'pending') {
             $transaction->transcation_status = 'PENDING';
-        } else if ($status == 'deny') {
+        }
+        else if ($status == 'deny') {
             $transaction->transcation_status = 'FAILED';
-        } else if ($status == 'exipire') {
+        }
+        else if ($status == 'exipire') {
             $transaction->transcation_status = 'EXPIRED';
-        } else if ($status == 'cancel') {
+        }
+        else if ($status == 'cancel') {
             $transaction->transcation_status = 'FAILED';
         }
 
@@ -59,16 +63,19 @@ class MidtransController extends Controller
                 Mail::to($transaction->user)->send(new TranscationSuccess($transaction));
             } else if ($status == 'settlement') {
                 Mail::to($transaction->user)->send(new TranscationSuccess($transaction));
-            } else if ($status == 'success') {
+            }
+            else if ($status == 'success') {
                 Mail::to($transaction->user)->send(new TranscationSuccess($transaction));
-            } else if ($status == 'capture' && $fraud == 'challenge') {
+            }
+            else if ($status == 'capture' && $fraud == 'challenge') {
                 return response()->json([
                     'meta' => [
                         'code' => 200,
                         'message' => 'Midtrans Payment Challenge'
                     ]
                 ]);
-            } else {
+            }
+            else {
                 return response()->json([
                     'meta' => [
                         'code' => 200,
