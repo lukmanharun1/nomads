@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@section('title', 'Login NOMADS')
+  
 @section('content')
 <main class="login-container">
   <div class="container">
@@ -45,6 +46,7 @@
               
               <p class="text-center mt-3">
                 @if (Route::has('password.request'))
+                <a href="{{ url('/register') }}">Registrasi</a>
                   <a class="btn btn-link" href="{{ route('password.request') }}">
                       {{ __('Saya Lupa Password') }}
                   </a>
