@@ -114,7 +114,7 @@
               </div>
               <hr>
               <p class="trip-to mt-2">
-                Trip to Ubud
+                Trip to Ragunan
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@
               <hr>
 
               <p class="trip-to mt-2">
-                Trip to Nusa Peninda
+                Trip to puri beta
               </p>
             </div>
           </div>
@@ -148,7 +148,7 @@
               <hr>
 
               <p class="trip-to mt-2">
-                Trip to Karimun Jawa
+                Trip to ragunan
               </p>
             </div>
           </div>

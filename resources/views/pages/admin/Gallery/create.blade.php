@@ -23,7 +23,7 @@
     <div class="card-body">
       <form action="{{route('gallery.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
+        <div class="form-group row col-lg-5">
           <label for="travel_packages_id">Paket Travel</label>
           <select name="travel_packages_id" required class="form-control">
             <option value="">Pilih Paket Travel</option>
@@ -35,11 +35,11 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group row col-lg-5">
           <label for="image">Image</label>
           <input type="file" name="image" placeholder="Image" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
       </form>
     </div>
   </div>

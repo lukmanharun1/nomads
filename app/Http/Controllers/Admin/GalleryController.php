@@ -19,6 +19,7 @@ class GalleryController extends Controller
   public function index()
   {
     $items = Gallery::with('travel_package')->get();
+    
     return view('pages.admin.Gallery.index', [
       'items' => $items
     ]);

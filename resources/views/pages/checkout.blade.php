@@ -83,26 +83,22 @@
                               <label for="username" class="sr-only">Name</label>
                               <input type="text" name="username" class="form-control mb-2 mr-sm-2"
                                   id="username" required  placeholder="Username">
-
                                   <label for="nationality" class="sr-only">Nationality</label>
                                   <input type="text" name="nationality" class="form-control mb-2 mr-sm-2"
-                                    style="width: 50px;"  required id="nationality" placeholder="Nationality">        
-
-                              <label for="is_visa" class="sr-only">Visa</label>
-                              <select name="is_visa" required id="is_visa" class="custom-select mb-2 mr-sm-2">
-                                  <option value=""  selected>VISA</option>
-                                  <option value="1">30 Days</option>
-                                  <option value="0">N/A</option>
-                              </select>
-                              <label for="doe_passport" class="sr-only">DOE Passport</label>
-                              <div class="input-group mb-2 mr-sm-2">
-                                  <input type="text" 
-                                    class="form-control datepicker"
-                                    name="doe_passport"
-                                    id="doe_passport"
-                                    placeholder="DOE Passport"
-                                    />
-                              </div>
+                                  required  id="nationality" placeholder="Nationality">     
+                                
+                                  <label for="is_visa" class="sr-only">Visa</label>
+                                  <select name="is_visa" required id="is_visa" class="custom-select mb-2 mr-sm-2">
+                                    <option value=""  selected>VISA</option>
+                                    <option value="1">30 Days</option>
+                                    <option value="0">N/A</option>
+                                  </select>
+                              
+                                  <label for="doePasport" class="sr-only">DOE Passport</label>
+                                  <div class="input-group mb-2 mr-sm-2">
+                                    <input type="text" class="form-control datepicker" id="doePassport" name="doe_passport" placeholder="DOE Passport">
+                                  </div>
+                              
                               <button type="submit" class="btn btn-add-now mb-2 px-4">Add New</button>
                           </form>
                           <h3 class="mt-2 mb-0">Note</h3>
@@ -184,6 +180,8 @@
                 rightIcon: '<img src="{{ url('frontend/image/ic_doe.png') }}">'
             }
         });
+
+        
         
     });
 
