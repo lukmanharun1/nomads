@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nomads
+    container_name: nomads-laravel
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8002:8000"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: nomads-mysql
+    restart: unless-stopped
+    tty: true
+    environment:
+      MYSQL_DATABASE: nomads
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
