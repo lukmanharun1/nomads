@@ -64,7 +64,7 @@
                                                 </td>
                                                 <td class="align-middle">
                                                     <a href="{{ route('checkout-remove', $detail->id) }}">
-                                                        <img src="{{ url('assets/image/ic_remove.png') }} " alt="">
+                                                        <img src="{{ url('assets/icon/remove.png') }} " alt="">
                                                     </a>
                                                 </td>
                                             </tr>
@@ -183,7 +183,7 @@
                 format: 'yyyy-mm-dd',
                 uiLibrary: 'bootstrap4',
                 icons: {
-                    rightIcon: '<img src="{{ url('assets/image/ic_doe.png') }}">'
+                    rightIcon: '<img src="{{ url('assets/icon/doe.png') }}">'
                 }
             });
         });

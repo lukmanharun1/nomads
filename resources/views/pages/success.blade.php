@@ -5,7 +5,7 @@
     <main>
         <div class="section-success d-flex align-items-center">
             <div class="col text-center">
-                <img src="{{ url('assets/image/ic_mail.png') }} ">
+                <img src="{{ url('assets/icon/mail.png') }} ">
                 <h1>Yay! Success</h1>
                 <p>
                     We've sent you email for trip instruction <br>

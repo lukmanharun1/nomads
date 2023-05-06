@@ -49,7 +49,7 @@
                             </p>
                             <div class="features row">
                                 <div class="col-md-4">
-                                    <img src="{{ url('assets/image/ic_event.png') }}" alt="icon featured event"
+                                    <img src="{{ url('assets/icon/event.png') }}" alt="icon featured event"
                                         class="features-image">
                                     <div class="description">
                                         <h3>Featured Event</h3>
@@ -58,7 +58,7 @@
                                 </div>
 
                                 <div class="col-md-4 border-left">
-                                    <img src="{{ url('assets/image/ic_language.png') }} " alt="icon language"
+                                    <img src="{{ url('assets/icon/language.png') }} " alt="icon language"
                                         class="features-image">
                                     <div class="description">
                                         <h3>Language</h3>
@@ -67,8 +67,7 @@
                                 </div>
 
                                 <div class="col-md-4 border-left">
-                                    <img src="{{ url('assets/image/ic_foods.png') }}" alt="icon foods"
-                                        class="features-image">
+                                    <img src="{{ url('assets/icon/foods.png') }}" alt="icon foods" class="features-image">
                                     <div class="description">
                                         <h3>Foods</h3>
                                         <p>{{ $item->foods }} </p>

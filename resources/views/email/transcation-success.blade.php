@@ -307,7 +307,8 @@
                                                                 style="font-family:Asistant, Helvertica, Arial, sans-serif;font-size:18px;line-height:20px;text-align:left;color:#071c4d;">
                                                                 Hi, {{ $data->user->name }} <br><br> Tiket Digital kamu
                                                                 udah berhasil dicetak. <br> booking ID
-                                                                <strong>#{{ $data->id }} </strong></div>
+                                                                <strong>#{{ $data->id }} </strong>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -485,7 +486,7 @@
                                                 style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:none;">
                                                 <tr>
                                                     <td style="width: 50px;">
-                                                        <img src="{{ url('assets/image/ic_support.png') }}"
+                                                        <img src="{{ url('assets/icon/support.png') }}"
                                                             width="50px">
                                                     </td>
                                                     <td

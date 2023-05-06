@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="description" content="Dashboard Admin">
+    <meta name="author" content="Lukman Harun">
+    @include('includes.favicon')
     <title>NOMADS Admin</title>
     @include('includes.admin.style')
 </head>
@@ -18,7 +18,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-       @include('includes.admin.sidebar')
+        @include('includes.admin.sidebar')
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -26,8 +26,8 @@
             <!-- Main Content -->
             <div id="content">
 
-               @include('includes.admin.navbar')
-               @yield('content')
+                @include('includes.admin.navbar')
+                @yield('content')
             </div>
             <!-- End of Main Content -->
 
@@ -57,8 +57,8 @@
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                   <form action="{{url('logout')}} " method="POST">
-                    @csrf
+                    <form action="{{ url('logout') }} " method="POST">
+                        @csrf
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                         <button class="btn btn-primary" type="submit">Logout</button>
                     </form>
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-  @include('includes.admin.script')
+    @include('includes.admin.script')
 
 </body>
 
