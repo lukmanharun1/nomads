@@ -30,8 +30,8 @@ class TranscationSuccess extends Mailable
      */
     public function build()
     {
-        return $this->from('lukman@harun.com', 'NOMADS')
-            ->subject('Tiket NOMADS Anda')
+        return $this->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'))
+            ->subject('Tiket Anda')
             ->view('email.transcation-success');
     }
 }
